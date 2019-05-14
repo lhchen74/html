@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url(bg.jpg); /* Set background image */   
+    background-size: cover;  /* Specifies the size of the background images */
+}
+
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* top, left, transform location center*/
+    width: 400px;
+    padding: 40px;
+    background: rgba(0, 0, 0, .8); /* Set half transport background*/
+    box-sizing: border-box;          /* width contains border*/
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
+
+
+.box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.box .inputBox {
+    position: relative;
+}
+
+.box .inputBox input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;       
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;   /* 去除 input 框默认的白色*/
+}
+
+.box .inputBox label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    letter-spacing: 1px;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.box .inputBox input:focus~label,   /* ~ sibling after input:focus */
+.box .inputBox input:valid~label {
+    top: -18px;
+    left: 0;
+    color: #03a9f4;
+    font-size: 12px;
+}
+
+.box input[type="submit"] {
+    background: transparent;
+    border: none;
+    outline: none;
+    background: #03a9f4;
+    padding: 10px 20px;  /* 内边距, submit button 内容与边框之间的距离 */
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+
+/* 
+### relative
+1. 定位是相对于自身位置定位（设置偏移量的时候，会相对于自身所在的位置偏移）。
+2. 设置了 relative 的元素仍然处在文档流中，元素的宽高不变，设置偏移量也不会影响其他元素的位置。
+3. 最外层容器设置为 relative 定位，在没有设置宽度的情况下，宽度是整个浏览器的宽度。
+
+### absolute 
+1. 定位是相对于离元素最近的设置了绝对或相对定位的父元素决定的，如果没有父元素设置绝对或相对定位，则元素相对于根元素即html元素定位。
+2. 设置了absolute的元素脱了了文档流，元素在没有设置宽度的情况下，宽度由元素里面的内容决定。
+3. 脱离后原来的位置相当于是空的，下面的元素会来占据位置。 
+*/
