@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    width: 600px;
+    height: 500px;
+    position: relative;
+    /* background: #000; */
+}
+
+.container img:nth-child(1) {
+    width: 100%;
+    position: absolute; /* girl.jpg 和 noise.png 在同一行，所以需要 girl.jpg 脱离文档流*/
+}
+
+
+.container:hover img:nth-child(1) {
+    transition: all 4s;
+    transform: translatex(50px);
+    opacity: 0;
+    filter: blur(10px);
+    animation-delay: 0.5s;
+}
+
+.container img:nth-child(2) {
+    width: 1200px;
+    height: 500px;
+    transform: translateX(600px) scaleX(0);
+    transform-origin: left;
+}
+
+.container:hover img:nth-child(2) {
+    transition: 8s;
+    transform: translateX(-600px) scaleX(1); 
+}
+
+
+
