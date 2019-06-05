@@ -1,0 +1,38 @@
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+.box>.ball {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #8385aa;
+    margin: 5px;
+    /*alternate: 交替，轮流*/
+    animation: bouncing 0.6s infinite alternate;
+}
+
+
+.box>.ball:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.box>.ball:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+
+
+@keyframes bouncing {
+    100% {
+        opacity: 0.1;
+        transform: translateY(-10px);
+    }
+}
